@@ -1,0 +1,19 @@
+{
+  "name": "minify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "ianstormtaylor-minify": "^0.2.1",
+    "minify": "^8.0.4",
+    "uglify-js": "^3.15.1",
+    "yuicompressor": "^2.4.8"
+  }
+}
