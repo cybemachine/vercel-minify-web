@@ -106,4 +106,5 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument)), app.rou
     e.query.code || e.query.input ? i = minify(e.query.code || e.query.input) : e.body ? i = minify(e.body) : r.send("no body detected"), r.send(i)
 });
 
-module.exports = app;
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => console.log(`Server is running in port ${PORT}`));
