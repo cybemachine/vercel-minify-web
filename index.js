@@ -97,8 +97,9 @@ function minify(code) {
 
 app.disable("x-powered-by");
 app.use(exp.static(__dirname + "/docs/"));
-app.all("/", (e, r) => r.redirect(302, "api-docs"));
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument)), app.route("/api").get((e, r) => {
+app.all("/", (e, r) => r.redirect("https://minify.cybemachine.repl.co"));
+app.use("/api-docs", (e,r)=>r.redirect("https://minify.cybemachine.repl.co"));
+app.route("/api").get((e, r) => {
     if (!e.query.code && !e.query.input) return r.send("no input/code detected");
     r.send(minify(e.query.code || e.query.input))
 }).post((e, r) => {
